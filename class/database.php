@@ -10,17 +10,17 @@ class Database extends PDO {
 	
 	}
 
-	private function setParams($statment, $paramerters = array()) {
+	private function setParams($statement, $paramerters = array()) {
 	
 		foreach ($paramerters as $key => $value) {
-			$statment->setParam($key, $value);
+			$this->setParam($statement, $key, $value);
 		}
 	
 	}
 
-	private function setParam($statment, $key, $value) {
+	private function setParam($statement, $key, $value) {
 
-		$statment->bindParam($key, $value);
+		$statement->bindParam($key, $value);
 
 	}
 
